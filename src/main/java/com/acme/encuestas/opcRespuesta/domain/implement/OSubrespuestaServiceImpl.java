@@ -6,37 +6,37 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.acme.encuestas.opcRespuesta.application.service.IOpcrespuestaService;
-import com.acme.encuestas.opcRespuesta.infrastructure.repository.OpcrespuestaRepository;
-import com.acme.encuestas.shared.domain.entity.Response_options;
+import com.acme.encuestas.opcRespuesta.application.service.IOSubrespuestaService;
+import com.acme.encuestas.opcRespuesta.infrastructure.repository.OSubrespuestaRepository;
+import com.acme.encuestas.shared.domain.entity.Subresponse_options;
 
 @Service
-public class OpcrespuestaServiceImpl implements IOpcrespuestaService {
+public class OSubrespuestaServiceImpl implements IOSubrespuestaService {
 
     @Autowired
-    private OpcrespuestaRepository opcrespuestaRepository;
-
+    private OSubrespuestaRepository oSubrespuestaRepository;
+     
 
     @Override
-    public List<Response_options> findAll() {
+    public List<Subresponse_options> findAll() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'findAll'");
     }
 
     @Override
-    public Optional<Response_options> findById(Long id) {
+    public Optional<Subresponse_options> findById(Long id) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'findById'");
     }
 
     @Override
-    public Response_options save(Response_options response_options) {
+    public Subresponse_options save(Subresponse_options subresponse_options) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'save'");
     }
 
     @Override
-    public Response_options update(Response_options response_options) {
+    public Subresponse_options update(Subresponse_options subresponse_options) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'update'");
     }
@@ -46,5 +46,6 @@ public class OpcrespuestaServiceImpl implements IOpcrespuestaService {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'deleteById'");
     }
+
     
 }
