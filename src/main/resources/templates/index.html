@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="es">
+<html lang="es" xmlns="http://www.thymeleaf.org">
 
     <head>
         <meta charset="UTF-8" />
@@ -11,12 +11,16 @@
         <title>Formularios Acme | Bienvenida</title>
     </head>
 
-    <body>
-        <header id="encabezado" class="encabezado"></header>
+    <body id="cuerpoWeb">
+        <!-- EJEMPLO DE VISUALIZACIÓN FINAL (APLICANDO WEBCOMPONENTS)
+            <encabezado></encabezado>
 
-        <main id="principal" class="principal"></main>
+            <principalContent></principalContent>
 
-        <footer id="pieDePagina" class="pieDePagina"></footer>
+            <pieDePagina></pieDePagina>
+        -->
+
+        <encabezado-component></encabezado-component>
     </body>
 
 </html>

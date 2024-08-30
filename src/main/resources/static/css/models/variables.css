@@ -1,0 +1,17 @@
+@import url("/css/models/tipografias.css/");
+
+:root {
+    /* VARIABLES PARA EL SITIO WEB */
+    --ff_titulo: 'Patrick Hand', 'Nunito', 'Open Sans', Arial, Helvetica, cursive, sans-serif, serif;
+    --ff_subtitulo-general: 'Nunito', 'Open Sans', Arial, Helvetica, sans-serif, serif;
+    --fs_text: 16px;
+
+
+    /* VARIABLES PARA LA PÁGINA PRINCIPAL */
+    --bg_color: #fcfbe3;
+    --bg_textColor: #17202a;
+    --color_enfasis1: #0081A7;
+    --color_enfasis2: #00AFB9;
+    --color_enfasis3: #FED9B7;
+    --color_enfasis4: #F07167;
+}
