@@ -1,1 +1,73 @@
 @import url("/css/models/variables.css/");
+
+.pieDePagina {
+    display: flex;
+    /* ¿Cómo se calcula el alto del Footer?
+        1. Se le indica que ocupe todo el alto del navegador
+        2. Se le resta el alto del "main" a los 100vh actuales
+        3. Se le suma a la resta la altura del header
+    */
+    height: calc(100vh - (100vh - (106px + 86px)) - 105px);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4rem 1rem 4rem;
+    user-select: none;
+
+    & .flechaNav {
+        font-size: 40px;
+        border: 1px solid rgba(0, 0, 0, .7);
+        border-radius: 100%;
+        background-color: #fff;
+        text-align: center;
+        cursor: default;
+    }
+
+    & .flechaNav--active {
+        cursor: pointer;
+        transition: all ease .3s;
+
+        &:hover {
+            transform: scale(1.1);
+            background-color: rgba(0, 0, 0, .15);
+        }
+    }
+
+    & .flechaNav--disabled {
+        cursor: not-allowed;
+        opacity: .7;
+    }
+
+    & .seccionMedia {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+
+        & .contentTop {
+            display: flex;
+            align-items: center;
+            gap: .4rem;
+
+            & .seccionMedia__referencia {
+                font-size: 16px;
+                font-weight: 600;
+                letter-spacing: 1px;
+                cursor: text;
+            }
+
+            & .seccionMedia__iconHeart,
+            .seccionMedia__iconColombia {
+                width: 1.75rem;
+                height: 1.75rem;
+                background-color: transparent;
+            }
+        }
+
+        & .seccionMedia__letraPequenya {
+            font-size: 13px;
+            font-weight: 500;
+            cursor: text;
+        }
+    }
+}

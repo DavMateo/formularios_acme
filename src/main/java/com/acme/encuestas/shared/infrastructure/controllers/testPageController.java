@@ -4,11 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class UserController {
+public class testPageController {
     
-    @GetMapping("/")
-    public String formulario() {
-        return "index";
+    @GetMapping("/test")
+    public String testPage() {
+        return "testViews";
     }
-    
 }

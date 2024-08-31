@@ -43,7 +43,7 @@ export class EncabezadoComponent extends HTMLElement {
         imagenInstagram.setAttribute("src", "/assets/img/svg/instagram_lightmode.svg");
         imagenInstagram.setAttribute("alt", "instagram_icon");
         imagenInstagram.setAttribute("class", "socialMedia__igIcon");
-        imagenInstagram.setAttribute("title", "logo_instagram");
+        imagenInstagram.setAttribute("title", "instagram");
 
         linkTwitter.setAttribute("href", "#");
         linkTwitter.setAttribute("class", "socialMedia__linkIcon");
@@ -51,7 +51,7 @@ export class EncabezadoComponent extends HTMLElement {
         imagenTwitter.setAttribute("src", "/assets/img/svg/twitter_lightmode.svg");
         imagenTwitter.setAttribute("alt", "Twitter_icon");
         imagenTwitter.setAttribute("class", "socialMedia__ttIcon");
-        imagenTwitter.setAttribute("title", "logo_twitter");
+        imagenTwitter.setAttribute("title", "twitter");
 
 
         // Creando el DOM para insertarlo al HTML

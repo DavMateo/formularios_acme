@@ -15,3 +15,49 @@
     background-color: var(--bg_color);
     color: var(--bg_textColor);
 }
+
+.principal {
+    display: flex;
+    justify-content: space-between;
+    height: calc(100vh - (106px + 85px));
+    max-width: 100vw;
+    padding: 0 4rem;
+    user-select: none;
+
+    & .contenidoIzq {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: baseline;
+        gap: 1.25rem;
+        width: calc(100vw / 2 - (1.45rem - 4rem));
+
+        & .contenidoIzq__titulo {
+            font-size: 60px;
+            font-weight: bolder;
+            text-wrap: wrap;
+            cursor: text;
+        }
+
+        & .contenidoIzq__descripcion {
+            line-height: 1.35rem;
+            word-wrap: break-word;
+            cursor: text;
+        }
+    }
+
+    & .contenidoDer {
+        & .containerShape {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: calc(100vw / 2 - (1.45rem - 4rem));
+            height: 100%;
+
+            & .containerShape__img {
+                width: 30rem;
+                height: 30rem;
+            }
+        }
+    }
+}
