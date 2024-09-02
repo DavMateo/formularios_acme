@@ -20,8 +20,6 @@ public class Surveys {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_encuesta", columnDefinition = "INT UNSIGNED", nullable = false)
-    @NotBlank(message = "'id_encuesta' no puede estar vacío.")
-    @Size(min = 1, max = 8, message = "El id_encuesta debe tener una longitud de 1 a 8 dígitos.")
     private Long idencuesta;
     
     // Embeber elementos DATETIME
@@ -35,7 +33,7 @@ public class Surveys {
     @PastOrPresent(message = "La fecha debe ser una actual o pasada, no se permite fechas futuras.")
     private LocalDateTime actualizadoen;
 
-    @Column(name = "descripcion", columnDefinition = "VARCHAR(255)", nullable = false)
+    @Column(name = "descripcion", columnDefinition = "VARCHAR(255) ", nullable = false, unique = true)
     @NotBlank(message = "'descripcion' no puede estar vacío.")
     @Size(min = 20, max = 255, message = "La descripción debe tener una longitud de 20 a 255 caracteres.")
     private String descripcion;

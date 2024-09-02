@@ -22,8 +22,6 @@ public class Chapter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_capitulo", columnDefinition = "INT UNSIGNED", nullable = false)
-    @NotBlank(message = "'id_capitulo' no puede estar vacío.")
-    @Size(min = 1, max = 8, message = "El id_capitulo debe tener una longitud de 1 a 8 dígitos.")
     private Long idcapitulo;
 
     // Embeber elementos DATETIME
@@ -42,7 +40,7 @@ public class Chapter {
     @Size(min = 1, max = 50, message = "El numero_capitulo debe tener una longitud de 1 a 50 caracteres.")
     private String numerocapitulo;
 
-    @Column(name = "titulo_capitulo", columnDefinition = "VARCHAR(50)", nullable = false)
+    @Column(name = "titulo_capitulo", columnDefinition = "VARCHAR(50)", nullable = false, unique = true)
     @NotBlank(message = "'titulo_capitulo' no puede estar vacío.")
     @Size(min = 4, max = 50, message = "El titulo_capitulo debe tener una longitud de 4 a 50 caracteres.")
     private String titulocapitulo;

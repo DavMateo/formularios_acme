@@ -22,8 +22,6 @@ public class Subresponse_options {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_opcion_subrespuesta", columnDefinition = "INT UNSIGNED", nullable = false)
-    @NotBlank(message = "'id_opcion_subrespuesta' no puede estar vacío.")
-    @Size(min = 1, max = 8, message = "El id_opcion_subrespuesta debe tener una longitud de 1 a 8 dígitos.")
     private Long idopcionsubrespuesta;
 
     @Column(name = "numero_subrespuesta", columnDefinition = "INT UNSIGNED", nullable = false)

@@ -1,8 +1,5 @@
 package com.acme.encuestas.encuesta.domain.implement;
 
-import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,41 +7,57 @@ import com.acme.encuestas.encuesta.application.service.IEncuestaService;
 import com.acme.encuestas.encuesta.infrastructure.repository.EncuestaRepository;
 import com.acme.encuestas.shared.domain.entity.Surveys;
 
+import jakarta.persistence.EntityNotFoundException;
+
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class EncuestaServiceImpl implements IEncuestaService {
 
     @Autowired
     private EncuestaRepository encuestaRepository;
 
-
     @Override
     public List<Surveys> findAll() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+        return encuestaRepository.findAll();
     }
 
     @Override
     public Optional<Surveys> findById(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findById'");
+        return encuestaRepository.findById(id);
     }
 
     @Override
     public Surveys save(Surveys surveys) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
+        // Verificar si ya existe una encuesta con el mismo nombre
+        if (encuestaRepository.existsByNombre(surveys.getNombre())) {
+            throw new RuntimeException("Ya existe una encuesta con el nombre proporcionado.");
+        }
+        surveys.setCreadoen(LocalDateTime.now());
+        surveys.setActualizadoen(LocalDateTime.now());
+        return encuestaRepository.save(surveys);
     }
 
     @Override
     public Surveys update(Surveys surveys) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
+        if (encuestaRepository.existsById(surveys.getIdencuesta())) {
+            surveys.setActualizadoen(LocalDateTime.now());
+            return encuestaRepository.save(surveys);
+        } else {
+            throw new EntityNotFoundException("Encuesta no encontrada por id: " + surveys.getIdencuesta());
+        }
     }
 
     @Override
     public void deleteById(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteById'");
+        if (encuestaRepository.existsById(id)) {
+            encuestaRepository.deleteById(id);
+        } else {
+            throw new EntityNotFoundException("Encuesta no encontrada por id: " + id);
+        }
     }
-    
 }
+
+
