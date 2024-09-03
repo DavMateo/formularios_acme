@@ -4,7 +4,20 @@
     /* VARIABLES PARA EL SITIO WEB */
     --ff_titulo: 'Patrick Hand', 'Nunito', 'Open Sans', Arial, Helvetica, cursive, sans-serif, serif;
     --ff_subtitulo-general: 'Nunito', 'Open Sans', Arial, Helvetica, sans-serif, serif;
+    --ff_estandar: Arial, Helvetica, sans-serif;
     --fs_text: 16px;
+    --cursor_pointer: pointer;
+    --sz_letraPequenya: 12px;
+    --sz_letraMediana: 14px;
+    --sz_letraSemigrande: 18px;
+    --sz_letraGrande: 20px;
+    --sz_letraSubtitulo: 26px;
+    --sz_letraTitulo: 36px;
+    --color_texto-claro: #a8a8a8;
+    --color_texto-intermedio: #50626e;
+    --br_estandar: 1rem;
+    --br_circulo: 50%;
+    --bg_blanco: rgb(255, 255, 255);
 
 
     /* VARIABLES PARA LA PÁGINA PRINCIPAL */
@@ -14,4 +27,14 @@
     --color_enfasis2: #00AFB9;
     --color_enfasis3: #FED9B7;
     --color_enfasis4: #F07167;
+
+
+    /* VARIABLES PARA LA PÁGINA DE LOGIN */
+    --efecto_traslucido: linear-gradient(200deg, 
+        rgba(124, 124, 98, .4), 
+        rgba(44, 57, 48, .4), 
+        rgba(25, 26, 24, .4)
+    );
+    --bg_inputField: #ebf3f5;
+    --br_loginEstandar: 1.825rem;
 }

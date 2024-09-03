@@ -1,0 +1,437 @@
+/* IMPORTANDO LOS ARCHIVOS NECESARIOS */
+@import url("/css/models/essentials.css/");
+@import url("/css/models/variables.css/");
+@import url("/css/animations/loginAnimations.css");
+
+
+.principalForm {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: var(--ff_subtitulo-general);
+
+    & .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+        width: 82vw;
+        height: 82vh;
+        background-color: var(--bg_blanco);
+
+        & .imgSection {
+            display: flex;
+            width: calc(92vw / 2);
+            height: 100%;
+            background: url('/assets/img/png/registroInicioSesion/backgroundLogin.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #fcfbe3;
+            padding: 2.5rem;
+            border-radius: var(--br_loginEstandar);
+
+            & .imgSection__infoIniciar {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                background: var(--efecto_traslucido);
+                backdrop-filter: blur(14px);
+                padding: 1.75rem;
+                position: relative;
+                border-radius: var(--br_loginEstandar);
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    bottom: 0;
+                    background-color: rgba(255, 255, 255, .025);
+                    border-radius: var(--br_loginEstandar);
+                    z-index: -100;
+                }
+
+                & .isii__btnEmpezar {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 5rem;
+                    height: 2rem;
+                    background: transparent;
+                    border: none;
+                    background-color: rgba(0, 0, 0, .5);
+                    backdrop-filter: blur(6px);
+                    border-radius: var(--br_estandar);
+                    cursor: var(--cursor_pointer);
+                    transition: all .15s ease-in-out;
+
+                    &:active {
+                        background-color: rgba(0, 0, 0, 0.35);
+                    }
+
+                    & .isiibe__btnIconSVG {
+                        width: 60%;
+                        height: 60%;
+                        isolation: isolate;
+
+                        & defs {
+                            & .path-0, .path-1 {
+                                fill: none;
+                            }
+                        }
+
+                        & .path-2 {
+                            stroke: var(--bg_blanco);
+                            fill: none;
+                            stroke-width: 8px;
+                            transform-box: fill-box;
+                            transform-origin: 50% 50%;
+                        }
+
+                        & .path-3 {
+                            fill: rgb(216, 216, 216);
+                            stroke: var(--bg_blanco);
+                            stroke-width: 8px;
+                            transform-origin: 200.335px 194.178px;
+                        }
+                    }
+                }
+
+                & .isii__infoTarjeta {
+                    & .isiiit__bienvenida {
+                        color: var(--color_texto-claro);
+                        font-size: var(--sz_letraPequenya);
+                        font-weight: 500;
+                    }
+
+                    & .isiiit__titulo {
+                        color: var(--bg_blanco);
+                        font-size: var(--sz_letraTitulo);
+                        margin-bottom: .95rem;
+                    }
+
+                    & .isiiit__parrafo {
+                        font-size: var(--sz_letraMediana);
+                    }
+                }
+
+                & .isii__imgTarjeta {
+                    width: 10.45rem;
+                    height: 10.45rem;
+                    transform: scaleX(-1);
+                }
+            }
+        }
+
+        & .formSection {
+            display: flex;
+            flex-direction: column;
+            width: calc(82vw / 2);
+            height: 100%;
+            border-radius: 0 var(--br_loginEstandar) var(--br_loginEstandar) 0;
+            padding: 2rem 3rem;
+            justify-content: space-between;
+
+            & .encabezadoForm {
+                font-family: Arial, Helvetica, sans-serif;
+                margin-bottom: 1.225rem;
+
+                & .encabezadoForm__titulo {
+                    font-size: var(--sz_letraSubtitulo);
+                    font-weight: 800;
+                }
+            }
+
+            & .contentLogin {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100%;
+
+                & .formLogin {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    justify-content: space-between;
+                    gap: 1.15rem;
+
+                    & .formLogin__email, .formLogin__contrasenya {
+                        display: flex;
+                        flex-direction: column;
+                        gap: .4rem;
+
+                        & label {
+                            color: var(--color_texto-claro);
+                            font-size: var(--sz_letraPequenya);
+                            font-weight: 600;
+                        }
+
+                        & input {
+                            background: transparent;
+                            background-color: var(--bg_inputField);
+                            border: none;
+                            border-radius: var(--br_estandar);
+                            height: 1.95rem;
+                            outline: none;
+                            padding: 0 1rem;
+                        }
+                    }
+
+                    & .formLogin__checkbox {
+                        position: relative;
+
+                        & .formLogin__checkbox > svg {
+                            position: absolute;
+                            top: -130%;
+                            left: -170%;
+                            width: 110px;
+                            pointer-events: none;
+                        }
+
+                        & .formLogin__checkbox * {
+                            box-sizing: border-box;
+
+                            &:focus {
+                                outline: 0;
+                            }
+                        }
+
+                        & input[type="checkbox"] {
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+                            appearance: none;
+                            -webkit-tap-highlight-color: transparent;
+                            cursor: pointer;
+                            margin: 0;
+                        }
+
+
+
+                        & .formLogin__checkbox-cbx {
+                            width: 24px;
+                            height: 24px;
+                            top: calc(50vh - 12px);
+                            left: calc(50vw - 12px);
+
+                            & input {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 24px;
+                                height: 24px;
+                                border: 2px solid #bfbfc0;
+                                border-radius: var(--br_circulo);
+
+                                &:checked + label {
+                                    animation: splash-12 0.6s ease forwards;
+                                }
+
+                                &:checked + label + svg path {
+                                    stroke-dashoffset: 0;
+                                }
+                            }
+
+                            & label {
+                                width: 24px;
+                                height: 24px;
+                                background: none;
+                                border-radius: var(--br_circulo);
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                -webkit-filter: url("#goo-12");
+                                filter: url("#goo-12");
+                                transform: trasnlate3d(0, 0, 0);
+                                pointer-events: none;
+
+                                &::after {
+                                    content: '¡Recuérdame!';
+                                    position: absolute;
+                                    top: 3px;
+                                    left: 2.1rem;
+                                    color: rgba(0, 0, 0, .65);
+                                    font-weight: 600;
+                                }
+                            }
+
+                            & svg {
+                                position: absolute;
+                                top: 5px;
+                                left: 4px;
+                                z-index: 1;
+                                pointer-events: none;
+
+                                & path {
+                                    stroke: var(--bg_blanco);
+                                    stroke-width: 3;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                    stroke-dasharray: 19;
+                                    stroke-dashoffset: 19;
+                                    transition: stroke-dashoffset 0.3s ease;
+                                    transition-delay: 0.2s;
+                                }
+                            }
+                        }
+                    }
+
+                    & .formLogin__btnIniciarSesion {
+                        & .formLogin__btnLogin {
+                            all: unset;
+                            width: calc(100% - (20px * 2) - 3rem);
+                            height: 1.55rem;
+                            font-size: 16px;
+                            background: transparent;
+                            border: none;
+                            position: relative;
+                            color: #f0f0f0;
+                            cursor: pointer;
+                            z-index: 1;
+                            padding: 10px 20px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            white-space: nowrap;
+                            user-select: none;
+                            -webkit-user-select: none;
+                            touch-action: manipulation;
+                            margin: .75rem auto;
+
+                            &::after, &::before {
+                                content: '';
+                                position: absolute;
+                                bottom: 0;
+                                right: 0;
+                                z-index: -99999;
+                                transition: all .4s;
+                            }
+
+                            &::before {
+                                transform: translate(0%, 0%);
+                                width: 100%;
+                                height: 100%;
+                                background: #28282d;
+                                border-radius: 10px;
+                            }
+
+                            &::after {
+                                transform: translate(10px, 10px);
+                                width: 35px;
+                                height: 35px;
+                                background: #ffffff15;
+                                backdrop-filter: blur(5px);
+                                -webkit-backdrop-filter: blur(5px);
+                                border-radius: 50px;
+                            }
+
+                            &:hover {
+                                &::before {
+                                    transform: translate(5%, 20%);
+                                    width: 110%;
+                                    height: 110%;
+                                }
+
+                                &::after {
+                                    border-radius: 10px;
+                                    transform: translate(0, 0);
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            }
+
+                            &:active {
+                                &::after {
+                                    transition: 0s;
+                                    transform: translate(0, 5%);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                & .contentLogin__separador {
+                    text-align: center;
+                    font-size: var(--sz_letraGrande);
+                    margin-bottom: .5rem;
+                }
+
+                & .cuenta {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100%;
+                    height: 3.25rem;
+                    gap: 1rem;
+                    cursor: pointer;
+
+                    & .cuenta__facebook, .cuenta__google {
+                        display: flex;
+                        align-items: center;
+                        width: calc(100% / 2);
+                        border: 1px solid #cbd7d7;
+                        border-radius: 3rem;
+                        padding: .4rem .75rem;
+                        transition: all .213s ease-in-out;
+
+                        &:hover {
+                            background-color: rgba(0, 0, 0, .25);
+                        }
+
+                        &:active {
+                            background-color: rgba(0, 0, 0, .5);
+                        }
+                        
+                        & svg {
+                            width: 2rem;
+                            height: 2rem;
+                        }
+
+                        & span {
+                            word-break: keep-all;
+                            margin-left: .65rem;
+                            font-size: 13px;
+                            font-weight: 500;
+                            color: var(--color_texto-intermedio);
+                        }
+                    }
+                }
+
+                & .footerForm {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: start;
+                    align-items: center;
+                    gap: .45rem;
+
+                    & .footerForm__infoText, .footerForm__linkRegistro {
+                        font-size: 15px;
+                    }
+
+                    & .footerForm__infoText {
+                        color: var(--color_texto-intermedio);
+                        font-weight: 500;
+                    }
+
+                    & .footerForm__linkRegistro {
+                        color: #07534f;
+                        font-weight: 600;
+                        letter-spacing: 1.15px;
+                        font-variant: small-caps;
+                        text-transform: capitalize;
+                        cursor: pointer;
+
+                        &:active {
+                            color: #033533;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

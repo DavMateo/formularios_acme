@@ -12,6 +12,12 @@
     align-items: center;
     padding: 0 4rem 1rem 4rem;
     user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -ms-justify-content: space-between;
+    -ms-align-items: center;
 
     & .flechaNav {
         font-size: 40px;
@@ -20,6 +26,7 @@
         background-color: #fff;
         text-align: center;
         cursor: default;
+        -ms-text-align: center;
     }
 
     & .flechaNav--active {
@@ -43,31 +50,39 @@
         justify-content: center;
         align-items: center;
         gap: .5rem;
+        -ms-flex-direction: column;
+        -ms-justify-content: center;
+        -ms-align-items: center;
+        -ms-gap: .5rem;
 
         & .contentTop {
             display: flex;
             align-items: center;
             gap: .4rem;
+            -ms-align-items: center;
+            -ms-gap: .4rem;
 
             & .seccionMedia__referencia {
                 font-size: 16px;
-                font-weight: 600;
-                letter-spacing: 1px;
+                font-weight: 800;
+                letter-spacing: 2px;
                 cursor: text;
+                font-family: var(--ff_titulo);
             }
 
             & .seccionMedia__iconHeart,
             .seccionMedia__iconColombia {
-                width: 1.75rem;
-                height: 1.75rem;
+                width: 1.5rem;
+                height: 1.5rem;
                 background-color: transparent;
             }
         }
 
         & .seccionMedia__letraPequenya {
-            font-size: 13px;
-            font-weight: 500;
+            font-size: 11px;
+            font-weight: 600;
             cursor: text;
+            font-family: var(--ff_subtitulo-general);
         }
     }
 }

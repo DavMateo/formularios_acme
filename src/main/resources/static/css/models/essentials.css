@@ -1,0 +1,15 @@
+/* IMPORTANDO LOS ARCHIVOS NECESARIOS */
+@import url("/css/models/variables.css/");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: var(--ff_estandar);
+    background-color: var(--bg_color);
+    color: var(--bg_textColor);
+}
