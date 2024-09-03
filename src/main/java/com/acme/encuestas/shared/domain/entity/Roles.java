@@ -17,8 +17,6 @@ public class Roles {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_roles", columnDefinition = "INT UNSIGNED", nullable = false)
-    @NotBlank(message = "'id_roles' no puede estar vacío.")
-    @Size(min = 1, max = 8, message = "El id_roles debe tener una longitud de 1 a 8 dígitos.")
     private Long idroles;
 
     @Column(name = "nombre", columnDefinition = "VARCHAR(255)", nullable = false)

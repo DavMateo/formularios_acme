@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.acme.encuestas.pregunta.application.service.IPreguntaService;
 import com.acme.encuestas.pregunta.infrastructure.repository.PreguntaRepository;
@@ -12,6 +13,7 @@ import com.acme.encuestas.shared.domain.entity.Questions;
 
 import jakarta.persistence.EntityNotFoundException;
 
+@Service
 public class PreguntaServiceImpl implements IPreguntaService {
 
     @Autowired

@@ -18,15 +18,13 @@ public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_user", columnDefinition = "INT UNSIGNED", nullable = false)
-    @NotBlank(message = "'id_user' no puede estar vacío.")
-    @Size(min = 1, max = 8, message = "El id_user debe tener una longitud de 1 a 8 dígitos.")
     private Long iduser;
 
     @Column(name = "activo", columnDefinition = "BOOLEAN", nullable = false)
     @NotNull(message = "'activo' es un booleano que requiere un valor obligatorio.")
     private boolean isActivo;
 
-    @Column(name = "nombreusuario", columnDefinition = "VARCHAR(12)", nullable = false)
+    @Column(name = "nombreusuario", columnDefinition = "VARCHAR(12)", nullable = false, unique = true)
     @NotBlank(message = "'nombre_usuario' no puede estar vacío.")
     @Size(min = 2, max = 12, message = "La columna nombre_usuario debe tener entre 2 a 12 caracteres.")
     private String nombreUsuario;

@@ -31,7 +31,7 @@ public class CapituloServiceImpl implements ICapituloService {
 
     @Override
     public Chapter save(Chapter chapter) {
-        if (capituloRepository.existsByTitulo(chapter.getTitulocapitulo())) {
+        if (capituloRepository.existsBytitulocapitulo(chapter.getTitulocapitulo())) {
             throw new RuntimeException("Ya existe este titulo");
         }
         chapter.setCreadoen(LocalDateTime.now());

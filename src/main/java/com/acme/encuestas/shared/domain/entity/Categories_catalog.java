@@ -20,8 +20,6 @@ public class Categories_catalog {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_categorias_catalogo", columnDefinition = "INT UNSIGNED", nullable = false)
-    @NotBlank(message = "'id_categorias_catalogo' no puede estar vacío.")
-    @Size(min = 1, max = 8, message = "El id_categorias_catalogo debe tener una longitud de 1 a 8 dígitos.")
     private Long idcategoriascatalogo;
 
     // Embeber elementos DATETIME

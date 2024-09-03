@@ -7,5 +7,5 @@ import com.acme.encuestas.shared.domain.entity.Chapter;
 
 @Repository
 public interface CapituloRepository extends JpaRepository<Chapter, Long> {
-    boolean existsByTitulo(String titulocapitulo);   
+    boolean existsBytitulocapitulo(String titulocapitulo);   
 }

@@ -20,8 +20,6 @@ public class Response_question {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_respuesta_pregunta", columnDefinition = "INT UNSIGNED", nullable = false)
-    @NotBlank(message = "'id_respuesta_pregunta' no puede estar vacío.")
-    @Size(min = 1, max = 8, message = "El id_respuesta_pregunta debe tener una longitud de 1 a 8 dígitos.")
     private Long idrespuestapregunta;
 
     @Column(name = "respuesta_texto", columnDefinition = "VARCHAR(80)", nullable = false)

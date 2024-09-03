@@ -22,8 +22,6 @@ public class Response_options {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_opciones_respuesta", columnDefinition = "INT UNSIGNED", nullable = false)
-    @NotBlank(message = "'id_opciones_respuesta' no puede estar vacío.")
-    @Size(min = 1, max = 8, message = "El id_opciones_respuesta debe tener una longitud de 1 a 8 dígitos.")
     private Long idopcionesrespuesta;
 
     @Column(name = "opcion_valor", columnDefinition = "VARCHAR(10)", nullable = false)

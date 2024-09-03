@@ -22,8 +22,6 @@ public class Survey_json {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_encuesta_json", columnDefinition = "INT UNSIGNED", nullable = false)
-    @NotBlank(message = "'id_encuesta_json' no puede estar vacío.")
-    @Size(min = 1, max = 8, message = "El id_encuesta_json debe tener una longitud de 1 a 8 dígitos.")
     private Long idencuestajson;
 
     @Column(name = "creado_en", columnDefinition = "DATETIME", nullable = false)

@@ -22,8 +22,6 @@ public class Questions {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_pregunta", columnDefinition = "INT UNSIGNED", nullable = false)
-    @NotBlank(message = "'id_pregunta' no puede estar vacío.")
-    @Size(min = 1, max = 8, message = "El id_capitulo debe tener una longitud de 1 a 8 dígitos.")
     private Long idpregunta;
 
     // Embeber elementos DATETIME
