@@ -1,5 +1,6 @@
 package com.acme.encuestas.pregunta.domain.implement;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -9,6 +10,8 @@ import com.acme.encuestas.pregunta.application.service.IPreguntaService;
 import com.acme.encuestas.pregunta.infrastructure.repository.PreguntaRepository;
 import com.acme.encuestas.shared.domain.entity.Questions;
 
+import jakarta.persistence.EntityNotFoundException;
+
 public class PreguntaServiceImpl implements IPreguntaService {
 
     @Autowired
@@ -16,32 +19,38 @@ public class PreguntaServiceImpl implements IPreguntaService {
 
     @Override
     public List<Questions> findAll() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+        return preguntaRepository.findAll();
     }
 
     @Override
     public Optional<Questions> findById(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findById'");
+        return preguntaRepository.findById(id);
     }
 
     @Override
     public Questions save(Questions questions) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
+        questions.setCreadoen(LocalDateTime.now());
+        questions.setActualizadoen(LocalDateTime.now());
+        return preguntaRepository.save(questions);
     }
 
     @Override
     public Questions update(Questions questions) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
+        if (preguntaRepository.existsById(questions.getIdpregunta())) {
+            questions.setActualizadoen(LocalDateTime.now());
+            return preguntaRepository.save(questions);
+        } else {
+            throw new EntityNotFoundException("Pregunta no encontrada por id:" + questions.getIdpregunta());
+        }
     }
 
     @Override
     public void deleteById(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteById'");
+       if (preguntaRepository.existsById(id)) {
+           preguntaRepository.deleteById(id);
+       } else {
+        throw new EntityNotFoundException("Pregunta no encontrada por Id" + id);
+       }
     }
     
 }
