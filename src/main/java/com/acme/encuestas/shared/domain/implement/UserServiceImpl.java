@@ -52,4 +52,9 @@ public class UserServiceImpl implements IUserService {
             throw new EntityNotFoundException("Usuario no encontrado por id" + id);
         }
     }
+
+    @Override
+    public Optional<Users> findBynombreUsuario(String nombreUsuario) {
+        return userRepository.findBynombreUsuario(nombreUsuario);
+    }
 }
