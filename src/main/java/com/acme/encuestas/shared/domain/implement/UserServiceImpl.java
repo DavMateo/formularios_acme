@@ -53,8 +53,5 @@ public class UserServiceImpl implements IUserService {
         }
     }
 
-    @Override
-    public Optional<Users> findBynombreUsuario(String nombreUsuario) {
-        return userRepository.findBynombreUsuario(nombreUsuario);
-    }
+
 }
